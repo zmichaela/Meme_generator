@@ -1,7 +1,3 @@
-//set timer
-//event listener
-//5 memes 
-
 let randomNumber;
 
 
@@ -16,14 +12,19 @@ function getRandomNumber () {
 function randomBackground () {
  randomNumber = Math.floor(Math.random() * 255);
  let randomGrb = randomNumber + ", " + randomNumber + ", " + randomNumber; //9,9,9
- document.body.style.backgroundColor = `grb(${randomGrb})`;
+ return randomGrb;
+}
+
+
+function changeColour () {
+  document.body.style.backgroundColor = `grb ( ${randomBackground()} )`;
 }
 
 function changeMeme () {
   let memeImage = document.querySelector("#image");
   memeImage.src = "images/image-" + getRandomNumber() + ".jpg";
-  randomBackground();
+  changeColour();
 }
 
 
-
+//document.getElementById('load-meme').addEventListener("click", changeMeme, false);
